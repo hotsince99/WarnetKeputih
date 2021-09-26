@@ -15,10 +15,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("Catalogue", systemImage: "list.bullet.rectangle")
                 }
-            SearchView()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
             AboutView()
                 .tabItem {
                     Label("About", systemImage: "person")

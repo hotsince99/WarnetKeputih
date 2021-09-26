@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @ObservedObject var apiServices = ApiServices()
+    
     var body: some View {
         
         NavigationView {
-            GameList()
+            GameList(games: apiServices.games)
+                .onAppear() {
+                    self.apiServices.getGames()
+                }
         }
-        
     }
 }
 

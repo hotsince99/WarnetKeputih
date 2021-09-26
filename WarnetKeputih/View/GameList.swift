@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct GameList: View {
+    
+    var games: [Game]
+    
     var body: some View {
-        List(games) { selectedGame in
+        List(games, id: \.id) { selectedGame in
             ZStack {
                 GameRow(game: selectedGame)
-                NavigationLink(destination: GameDetail(game: selectedGame)) { }
+                NavigationLink(destination: GameDetail(gameId: selectedGame.id)) { }
             }
         }.environment(\.defaultMinListRowHeight, 390)
         .navigationBarTitle("Catalogue")
@@ -21,6 +24,6 @@ struct GameList: View {
 
 struct GameList_Previews: PreviewProvider {
     static var previews: some View {
-        GameList()
+        GameList(games: dummyGames)
     }
 }

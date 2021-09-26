@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct GameRow: View {
     var game: Game
@@ -15,7 +16,7 @@ struct GameRow: View {
         GeometryReader { card in
             
             VStack(alignment: .leading) {
-                Image(game.backgroundImage)
+                WebImage(url: URL(string: game.backgroundImage))
                     .resizable()
                     .scaledToFill()
                     .frame(width: card.size.width, height: card.size.height * 0.7 , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -30,7 +31,7 @@ struct GameRow: View {
                         
                         HStack {
                             Image(systemName: "calendar")
-                            Text(game.release)
+                            Text(game.released)
                                 .font(.subheadline)
                         }
                         
@@ -57,7 +58,6 @@ struct GameRow: View {
 
 struct GameRow_Previews: PreviewProvider {
     static var previews: some View {
-        GameRow(game: games[0]).frame(height:370).padding()
-        //GameRow(game: games[1]).previewLayout(.fixed(width: 320, height: 350))
+        GameRow(game: dummyGames[0]).frame(height:370).padding()
     }
 }

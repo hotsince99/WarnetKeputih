@@ -6,46 +6,50 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct GameDetail: View {
-    var game: Game
+    
+    @ObservedObject var apiServices = ApiServices()
+    var gameId: Int
     
     var body: some View {
         ScrollView {
-            VStack {
-                Spacer(minLength: 30)
+            VStack(spacing:10) {
+                Spacer(minLength: 10)
                 
-                Text(game.name)
-                    .font(.system(size: 20))
+                Text(apiServices.gameInfo.name)
+                    .font(.title)
                     .bold()
                     .lineLimit(2)
                 
-                Spacer(minLength: 20)
-                
-                Image(game.backgroundImage)
+                WebImage(url: URL(string: apiServices.gameInfo.backgroundImage))
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 320, height: 250, alignment: .center)
-                Spacer(minLength: 20)
+                    .frame(width: 360, height: 250, alignment: .center)
+                    .cornerRadius(20)
                 
                 HStack {
                     Image(systemName: "calendar")
-                    Text("Release Date: " + game.release)
+                    Text("Release Date: " + apiServices.gameInfo.released)
                 }
-                Spacer(minLength: 20)
                 
                 HStack {
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
-                    Text(String(format: "%.2f", game.rating))
+                    Text(String(format: "%.2f", apiServices.gameInfo.rating))
+                }
+                
+                Link("Visit Website", destination: URL(string: apiServices.gameInfo.website)!)
+                
+                HStack {
+                    Text(apiServices.gameInfo.description)
+                        .padding()
                 }
             }
         }
-    }
-}
-
-struct GameDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        GameDetail(game: games[0])
+        .onAppear() {
+            self.apiServices.getGameInfo(gameId: gameId)
+        }
     }
 }

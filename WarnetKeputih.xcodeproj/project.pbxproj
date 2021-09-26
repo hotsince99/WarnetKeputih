@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A887990270080250040B858 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A88798F270080250040B858 /* GameInfo.swift */; };
 		8ACCDA5D26FC496400408382 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCDA5C26FC496400408382 /* AppDelegate.swift */; };
 		8ACCDA5F26FC496400408382 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCDA5E26FC496400408382 /* SceneDelegate.swift */; };
 		8ACCDA6126FC496400408382 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCDA6026FC496400408382 /* ContentView.swift */; };
@@ -20,10 +21,13 @@
 		8ACCDA8026FC59BC00408382 /* GameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCDA7F26FC59BC00408382 /* GameRow.swift */; };
 		8ACCDA8A26FC803900408382 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCDA8926FC803900408382 /* HomeView.swift */; };
 		8ACCDA8C26FC804900408382 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCDA8B26FC804900408382 /* AboutView.swift */; };
-		8ACCDA8E26FC8B4800408382 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCDA8D26FC8B4800408382 /* SearchView.swift */; };
+		8AE19DD826FF929A00A023E8 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE19DD726FF929A00A023E8 /* ApiServices.swift */; };
+		8AE19DDA26FF95FF00A023E8 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE19DD926FF95FF00A023E8 /* Games.swift */; };
+		8AE19DE726FFC6BD00A023E8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8AE19DE626FFC6BD00A023E8 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A88798F270080250040B858 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		8ACCDA5926FC496400408382 /* WarnetKeputih.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarnetKeputih.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACCDA5C26FC496400408382 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ACCDA5E26FC496400408382 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +43,8 @@
 		8ACCDA7F26FC59BC00408382 /* GameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRow.swift; sourceTree = "<group>"; };
 		8ACCDA8926FC803900408382 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8ACCDA8B26FC804900408382 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		8ACCDA8D26FC8B4800408382 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		8AE19DD726FF929A00A023E8 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		8AE19DD926FF95FF00A023E8 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +52,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE19DE726FFC6BD00A023E8 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A78A4DD26FDDCF200E5A3A0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8AE19DD726FF929A00A023E8 /* ApiServices.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8A8879912700984F0040B858 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8ACCDA7726FC578000408382 /* DummyGames.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		8ACCDA5026FC496400408382 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +96,8 @@
 			children = (
 				8ACCDA7226FC499600408382 /* Base */,
 				8ACCDA7126FC498B00408382 /* Model */,
+				8A78A4DD26FDDCF200E5A3A0 /* Networking */,
+				8A8879912700984F0040B858 /* Util */,
 				8ACCDA7026FC498600408382 /* View */,
 				8ACCDA6226FC496500408382 /* Assets.xcassets */,
 				8ACCDA6726FC496500408382 /* LaunchScreen.storyboard */,
@@ -94,13 +118,12 @@
 		8ACCDA7026FC498600408382 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8ACCDA7B26FC59A400408382 /* GameList.swift */,
 				8ACCDA6026FC496400408382 /* ContentView.swift */,
 				8ACCDA7926FC599700408382 /* GameDetail.swift */,
-				8ACCDA7B26FC59A400408382 /* GameList.swift */,
 				8ACCDA7F26FC59BC00408382 /* GameRow.swift */,
 				8ACCDA8926FC803900408382 /* HomeView.swift */,
 				8ACCDA8B26FC804900408382 /* AboutView.swift */,
-				8ACCDA8D26FC8B4800408382 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,7 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				8ACCDA7526FC49D200408382 /* Game.swift */,
-				8ACCDA7726FC578000408382 /* DummyGames.swift */,
+				8AE19DD926FF95FF00A023E8 /* Games.swift */,
+				8A88798F270080250040B858 /* GameInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +163,9 @@
 			dependencies = (
 			);
 			name = WarnetKeputih;
+			packageProductDependencies = (
+				8AE19DE626FFC6BD00A023E8 /* SDWebImageSwiftUI */,
+			);
 			productName = WarnetKeputih;
 			productReference = 8ACCDA5926FC496400408382 /* WarnetKeputih.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +193,9 @@
 				Base,
 			);
 			mainGroup = 8ACCDA5026FC496400408382;
+			packageReferences = (
+				8AE19DE526FFC6BD00A023E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 8ACCDA5A26FC496400408382 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -195,15 +225,17 @@
 			files = (
 				8ACCDA8A26FC803900408382 /* HomeView.swift in Sources */,
 				8ACCDA5D26FC496400408382 /* AppDelegate.swift in Sources */,
+				8AE19DDA26FF95FF00A023E8 /* Games.swift in Sources */,
 				8ACCDA5F26FC496400408382 /* SceneDelegate.swift in Sources */,
 				8ACCDA8026FC59BC00408382 /* GameRow.swift in Sources */,
 				8ACCDA8C26FC804900408382 /* AboutView.swift in Sources */,
 				8ACCDA6126FC496400408382 /* ContentView.swift in Sources */,
+				8AE19DD826FF929A00A023E8 /* ApiServices.swift in Sources */,
 				8ACCDA7826FC578000408382 /* DummyGames.swift in Sources */,
+				8A887990270080250040B858 /* GameInfo.swift in Sources */,
 				8ACCDA7A26FC599700408382 /* GameDetail.swift in Sources */,
 				8ACCDA7C26FC59A400408382 /* GameList.swift in Sources */,
 				8ACCDA7626FC49D200408382 /* Game.swift in Sources */,
-				8ACCDA8E26FC8B4800408382 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8AE19DE526FFC6BD00A023E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8AE19DE626FFC6BD00A023E8 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AE19DE526FFC6BD00A023E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8ACCDA5126FC496400408382 /* Project object */;
 }

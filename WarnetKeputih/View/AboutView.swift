@@ -16,7 +16,7 @@ struct AboutView: View {
                 Image("display_picture")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 200, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .clipped()
                     .cornerRadius(30)
                     .padding(.top, 50)
@@ -26,6 +26,9 @@ struct AboutView: View {
                     .font(.headline)
                 
                 Text("ITS Surabaya")
+                    .font(.subheadline)
+                
+                Text("\njosuahutapea.17023@mhs.its.ac.id")
                     .font(.subheadline)
                 
                 Spacer(minLength: 30)
