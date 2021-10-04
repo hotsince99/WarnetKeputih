@@ -10,8 +10,8 @@ import SwiftUI
 
 class ApiServices: ObservableObject {
     
-    @Published var games = [Game]()
-    @Published var gameInfo = GameInfo(id: 0, name: "", backgroundImage: "", rating: 0.0, released: "", description: "", website: "http://")
+    @Published var games: [Game] = []
+    @Published var gameInfo = GameInfo(id: 0, name: "", backgroundImage: "", rating: 0.0, released: "", desc: "", website: "http://")
     
     private let apiKey = "cd6007daf1e44a308a182eb724560f8d"
     
@@ -63,7 +63,7 @@ class ApiServices: ObservableObject {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse, let data = data else {
                 DispatchQueue.main.async {
-                    self.gameInfo = GameInfo(id: 0, name: "", backgroundImage: "", rating: 0.0, released: "", description: "", website: "")
+                    self.gameInfo = GameInfo(id: 0, name: "", backgroundImage: "", rating: 0.0, released: "", desc: "", website: "")
                 }
                 return
             }

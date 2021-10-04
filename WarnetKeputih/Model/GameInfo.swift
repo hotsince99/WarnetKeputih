@@ -8,12 +8,12 @@
 import UIKit
 
 struct GameInfo: Identifiable, Codable {
-    var id: Int
+    var id: Int32
     var name: String
     var backgroundImage: String
     var rating: Float
     var released: String
-    var description: String
+    var desc: String
     var website: String
     
     enum CodingKeys: String, CodingKey {
@@ -22,7 +22,7 @@ struct GameInfo: Identifiable, Codable {
         case backgroundImage = "background_image"
         case rating
         case released
-        case description
+        case desc = "description_raw"
         case website
     }
 }

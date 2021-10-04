@@ -15,4 +15,4 @@ let dummyGames: [Game] = [
     Game(id: 5, name: "The Elder Scrolls V: Skyrim", backgroundImage: "skyrim", rating: 4.43, released: "2011-11-11")
 ]
 
-let dummyGameInfo = GameInfo(id: 1, name: "The Elder Scrolls V: Skyrim", backgroundImage: "skyrim", rating: 4.43, released: "2011-11-11", description: "Lorem ipsum dolor sit amet", website: "https://www.google.com")
+let dummyGameInfo = GameInfo(id: 1, name: "The Elder Scrolls V: Skyrim", backgroundImage: "skyrim", rating: 4.43, released: "2011-11-11", desc: "Lorem ipsum dolor sit amet", website: "https://www.google.com")

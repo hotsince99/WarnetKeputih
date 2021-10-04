@@ -14,7 +14,11 @@ struct GameList: View {
     var body: some View {
         List(games, id: \.id) { selectedGame in
             ZStack {
-                GameRow(game: selectedGame)
+                GameRow(id: selectedGame.id,
+                        name: selectedGame.name,
+                        backgroundImage: selectedGame.backgroundImage,
+                        rating: selectedGame.rating,
+                        released: selectedGame.released)
                 NavigationLink(destination: GameDetail(gameId: selectedGame.id)) { }
             }
         }.environment(\.defaultMinListRowHeight, 390)
