@@ -1,7 +1,7 @@
 # WarnetKeputih
 
-This project is created for Dicoding iOS Fundamental first submission.
-This project consists of 3 views, Catalogue, Detail, and About Developer.
+This project is created for Dicoding iOS Fundamental final submission.
+This project consists of 4 views, Catalogue, Favorite, Detail, and About Developer.
 
 ### Catalogue view shows lists of Games. Each row will show:
 - Game Title
@@ -33,4 +33,4 @@ External Package used: [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebIm
 - Separate data retrieval code from network/API with views.
 
 ### Wireframe:
-![wireframe_warnetkeputih](https://github.com/hotsince99/WarnetKeputih/blob/master/wireframe.png)
+![wireframe](https://github.com/hotsince99/WarnetKeputih/blob/master/wireframe.png)
